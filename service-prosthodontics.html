@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تركيبات الأسنان الثابتة والمتحركة | مركز أستر الطبي بالمقطم</title>
+    
+    <!-- مكتبة التصميم وتنسيق الألوان المستعملة في الموقع الرئيسي -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                asterBg: '#fdf9fe',
+                asterMain: '#531d84',
+                asterDark: '#23133b',
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-asterBg text-gray-800 font-sans antialiased">
+
+    <!-- شريط علوي ذكي للعودة للصفحة الرئيسية -->
+    <nav class="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-asterMain font-bold flex items-center gap-2 hover:text-asterDark transition">
+                <i class="fas fa-arrow-right"></i> العودة للرئيسية
+            </a>
+            <span class="font-black text-asterDark text-sm sm:text-base">مركز أستر الطبي</span>
+        </div>
+    </nav>
+
+    <!-- رأس الصفحة: اسم الخدمة ووصفها البسيط -->
+    <header class="py-16 text-center bg-gradient-to-b from-white to-transparent px-6">
+        <div class="container mx-auto max-w-3xl">
+            <h1 class="text-3xl md:text-4xl font-black text-asterDark">
+                خدمة <span class="text-asterMain">تركيبات الأسنان المتطورة</span>
+            </h1>
+            <p class="text-gray-600 mt-4 text-base md:text-lg leading-relaxed font-medium">
+                تركيبات الأسنان الثابتة والمتحركة ليست فقط لتعويض الأسنان المفقودة ولكنها تستخدم أيضاً لتوفير الحماية للأسنان الضعيفة. نحن في مركز أستر الطبي وبأيدي نخبة من أخصائيي واستشاريي التركيبات وبمساعدة أحدث التكنولوجيا من تصميم التركيبات باستعمال الذكاء الاصطناعي في أكبر معامل صناعة الأسنان وباستخدام مواد فائقة الصلابة والشكل الجمالي نضمن لعملائنا الحصول على أفضل تجربة لتركيبات الأسنان.
+            </p>
+        </div>
+    </header>
+
+    <!-- عرض معرض الصور وزر الحجز المباشر -->
+    <main class="container mx-auto px-6 pb-24 max-w-5xl">
+        <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-purple-50/50 flex flex-col items-center">
+            
+            <!-- عرض الصور الأربعة بشكل شبكي احترافي ومتناسق -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full mb-8">
+                <div class="rounded-2xl overflow-hidden shadow-md border border-gray-100">
+                    <img src="https://i.postimg.cc/bdcKFqKw/9922B473-4C60-4FFD-8BF0-5FAA3954B6A1-780x450.jpg" alt="تركيبات الأسنان - صورة 1" class="w-full h-64 object-cover">
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md border border-gray-100">
+                    <img src="https://i.postimg.cc/zDsv1KNY/154729207-10157568541407172-6253113642935840499-n.jpg" alt="تصميم التركيبات الرقمي - صورة 2" class="w-full h-64 object-cover">
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md border border-gray-100">
+                    <img src="https://i.postimg.cc/XY8YFPyt/486402235-10160522746242172-2094985728762540442-n.jpg" alt="جودة المواد والشكل الجمالي - صورة 3" class="w-full h-64 object-cover">
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md border border-gray-100">
+                    <img src="https://i.postimg.cc/LsQ4QZDw/486775509-10160522746722172-5114899350502801481-n.jpg" alt="نتائج تركيبات الأسنان - صورة 4" class="w-full h-64 object-cover">
+                </div>
+            </div>
+
+            <!-- قسم الحجز والتحويل للرابط الخارجي -->
+            <div class="text-center w-full max-w-xl border-t border-gray-100 pt-8">
+                <h3 class="text-xl font-bold text-asterDark mb-2">استعد كفاءة أسنانك وجمال ابتسامتك</h3>
+                <p class="text-sm text-gray-500 mb-6">اضغط على الزر أدناه لتعبئة بياناتك وحجز موعد كشف واستشارة لتصميم تركيبات أسنان مخصصة ومدعومة بالذكاء الاصطناعي.</p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <!-- زر الحجز المباشر المربوط بالـ Google Form الخاص بك -->
+                    <a href="https://docs.google.com/forms/d/1FBil8KpC3Cq6LrKHDOTCAl7yeL6OkUoJ6eoFf43vxs8/edit" target="_blank" class="w-full sm:w-auto bg-asterMain text-white px-10 py-4 rounded-xl font-bold text-base hover:bg-asterDark transition flex items-center justify-center gap-3 shadow-lg hover:shadow-purple-200">
+                        <i class="fas fa-calendar-check text-lg"></i> احجز الآن
+                    </a>
+                    
+                    <!-- زر إضافي سريع للواتساب للاستفسارات السريعة -->
+                    <a href="https://wa.me/201069937871" target="_blank" class="w-full sm:w-auto border-2 border-gray-200 text-gray-700 px-8 py-3.5 rounded-xl font-bold text-sm hover:border-asterMain hover:text-asterMain transition flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp text-lg text-[#25D366]"></i> استشارة سريعة
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- تذييل مبسط -->
+    <footer class="bg-asterDark text-purple-200/60 py-6 text-center text-xs border-t border-purple-900/40">
+        © 2026 جميع الحقوق محفوظة لمركز أستر الطبي بالقاهرة.
+    </footer>
+
+</body>
+</html>
