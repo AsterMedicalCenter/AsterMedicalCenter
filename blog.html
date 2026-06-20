@@ -6,7 +6,6 @@
     <title>المدونة الطبية | مقالات مركز أستر الطبي</title>
     <meta name="description" content="اقرأ أحدث المقالات والنصائح الطبية التوعوية حول صحة وتجميل الأسنان من طبيب الأسنان المتخصص بمركز أستر الطبي في المقطم.">
     
-    <!-- مكتبة التصميم وتنسيق الألوان المستعملة في الموقع الرئيسي -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -26,17 +25,21 @@
 </head>
 <body class="bg-asterBg text-gray-800 font-sans antialiased">
 
-    <!-- شريط علوي ذكي للعودة للصفحة الرئيسية -->
     <nav class="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-asterMain font-bold flex items-center gap-2 hover:text-asterDark transition">
+            <div class="hidden md:flex space-x-reverse space-x-6 font-bold text-gray-700">
+                <a href="index.html#hero" class="hover:text-asterMain transition">الرئيسية</a>
+                <a href="index.html#services" class="hover:text-asterMain transition">خدماتنا</a>
+                <a href="blog.html" class="text-asterMain transition">المقالات</a>
+                <a href="index.html#about" class="hover:text-asterMain transition">عن المركز</a>
+                <a href="index.html#contact" class="hover:text-asterMain transition">اتصل بنا</a>
+            </div>
+            <a href="index.html" class="text-asterMain font-bold flex items-center gap-2 hover:text-asterDark transition md:order-last">
                 <i class="fas fa-arrow-right"></i> العودة للرئيسية
             </a>
-            <span class="font-black text-asterDark text-sm sm:text-base">المدونة الطبية - مركز أستر</span>
         </div>
     </nav>
 
-    <!-- رأس الصفحة -->
     <header class="py-16 text-center bg-gradient-to-b from-white to-transparent px-6">
         <div class="container mx-auto max-w-3xl">
             <span class="bg-purple-100 text-asterMain text-xs font-bold px-4 py-1 rounded-full">توعية طبية مستمرة</span>
@@ -49,32 +52,29 @@
         </div>
     </header>
 
-    <!-- شبكة المقالات الرئيسية -->
     <main class="container mx-auto px-6 pb-24 max-w-6xl">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- المقال الأول -->
             <article class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl hover:border-purple-200 transition duration-300 flex flex-col">
-                <img src="https://images.unsplash.com/photo-1512223792601-592a9809eed4?q=80&w=500" alt="العناية بالأسنان" class="w-full h-48 object-cover">
+                <img src="https://i.postimg.cc/prWZVT35/zraʿat-Nobel-Biocare-alswysryt-300x200-copy.jpg" alt="متى لا يجب عمل زراعة الأسنان" class="w-full h-48 object-cover">
                 <div class="p-6 flex flex-col flex-grow">
                     <div class="flex items-center gap-2 text-xs text-gray-400 mb-3">
                         <span><i class="far fa-calendar ml-1"></i> يونيو 2026</span>
                         <span>•</span>
-                        <span><i class="far fa-user ml-1"></i> فريق أستر الطبي</span>
+                        <span><i class="far fa-user ml-1"></i> عيادة زراعة الأسنان</span>
                     </div>
                     <h2 class="text-xl font-bold text-asterDark mb-2 hover:text-asterMain transition">
-                        <a href="article-teeth-care.html">الطرق الصحيحة للعناية اليومية بنظافة الأسنان</a>
+                        <a href="article-dental-implants-contraindications.html">متى لا يجب عمل زراعة الأسنان؟</a>
                     </h2>
                     <p class="text-gray-500 text-sm leading-relaxed mb-5 line-clamp-3">
-                        تعرف على الخطوات الموصى بها من أطبائنا لاختيار الفرشاة والمعجون المناسبين وكيفية تنظيف الأسنان لحمايتها من التسوس وتراكم الجير.
+                        رغم نجاح زراعة الأسنان كحل مثالي لتعويض المفقود، إلا أن هناك حالات وموانع طبية مؤقتة أو دائمة تمنع إجراءها. تعرف على موانع زراعة الأسنان بالتفصيل.
                     </p>
-                    <a href="article-teeth-care.html" class="mt-auto text-xs font-bold text-asterMain flex items-center gap-1 hover:underline group">
+                    <a href="article-dental-implants-contraindications.html" class="mt-auto text-xs font-bold text-asterMain flex items-center gap-1 hover:underline group">
                         اقرأ المقال كاملاً <i class="fas fa-arrow-left text-[10px] transform group-hover:-translate-x-1 transition"></i>
                     </a>
                 </div>
             </article>
 
-            <!-- المقال الثاني -->
             <article class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl hover:border-purple-200 transition duration-300 flex flex-col">
                 <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=500" alt="تقويم الأسنان للأطفال" class="w-full h-48 object-cover">
                 <div class="p-6 flex flex-col flex-grow">
@@ -84,18 +84,15 @@
                         <span><i class="far fa-user ml-1"></i> عيادة التقويم</span>
                     </div>
                     <h2 class="text-xl font-bold text-asterDark mb-2 hover:text-asterMain transition">
-                        <a href="article-kids-ortho.html">ما هو السن المناسب لزيارة طبيب تقويم الأسنان؟</a>
+                        <a href="#" class="cursor-not-allowed">ما هو السن المناسب لزيارة طبيب تقويم الأسنان؟</a>
                     </h2>
                     <p class="text-gray-500 text-sm leading-relaxed mb-5 line-clamp-3">
                         دليل شامل للأبوين لمعرفة العلامات المبكرة التي تدل على حاجة الطفل لتقويم الأسنان وكيف يساعد الفحص المبكر في تجنب مشاكل الفك.
                     </p>
-                    <a href="article-kids-ortho.html" class="mt-auto text-xs font-bold text-asterMain flex items-center gap-1 hover:underline group">
-                        اقرأ المقال كاملاً <i class="fas fa-arrow-left text-[10px] transform group-hover:-translate-x-1 transition"></i>
-                    </a>
+                    <span class="mt-auto text-xs font-bold text-gray-400 flex items-center gap-1">قريباً</span>
                 </div>
             </article>
 
-            <!-- المقال الثالث -->
             <article class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl hover:border-purple-200 transition duration-300 flex flex-col">
                 <img src="https://images.unsplash.com/photo-1447433589675-4adf5692999a?q=80&w=500" alt="تبييض الأسنان وحمايتها" class="w-full h-48 object-cover">
                 <div class="p-6 flex flex-col flex-grow">
@@ -105,21 +102,18 @@
                         <span><i class="far fa-user ml-1"></i> تجميل الأسنان</span>
                     </div>
                     <h2 class="text-xl font-bold text-asterDark mb-2 hover:text-asterMain transition">
-                        <a href="article-teeth-whitening.html">5 نصائح ذهبية للحفاظ على نتائج تبييض الأسنان</a>
+                        <a href="#" class="cursor-not-allowed">5 نصائح ذهبية للحفاظ على نتائج تبييض الأسنان</a>
                     </h2>
                     <p class="text-gray-500 text-sm leading-relaxed mb-5 line-clamp-3">
                         بعد جلسة التبييض في العيادة، هناك أطعمة وعادات يجب تجنبها للحفاظ على لمعان بياض أسنانك لأطول فترة ممكنة. اكتشفها الآن.
                     </p>
-                    <a href="article-teeth-whitening.html" class="mt-auto text-xs font-bold text-asterMain flex items-center gap-1 hover:underline group">
-                        اقرأ المقال كاملاً <i class="fas fa-arrow-left text-[10px] transform group-hover:-translate-x-1 transition"></i>
-                    </a>
+                    <span class="mt-auto text-xs font-bold text-gray-400 flex items-center gap-1">قريباً</span>
                 </div>
             </article>
 
         </div>
     </main>
 
-    <!-- تذييل مبسط -->
     <footer class="bg-asterDark text-purple-200/60 py-6 text-center text-xs border-t border-purple-900/40">
         © 2026 جميع الحقوق محفوظة لمركز أستر الطبي بالقاهرة.
     </footer>
