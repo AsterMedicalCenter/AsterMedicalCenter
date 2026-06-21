@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مركز أستر الطبي | Aster Medical Center</title>
-    <meta name="description" content="مرحباً بكم في مركز أستر الطبي بالمقطم - أحدث التقنيات الطبية لرعاية أسنانكم وصحتكم مع نخبة من الاستشاريين والأخصائيين.">
+    <title>مركز أستر الطبي بالمقطم | عيادات تخصصية وطوارئ أسنان 24 ساعة</title>
+    <meta name="description" content="مركز أستر الطبي (Aster Medical Center) in المقطم والهضبة الوسطى. رعاية طبية متكاملة وعيادات أسنان متخصصة (زراعة، تقويم، تجميل) على مدار 24 ساعة.">
     
-    <!-- مكتبة التصميم وتنسيق الألوان المستعملة في الموقع الرئيسي -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -24,155 +23,246 @@
         }
     </script>
     
-    <style>
-        /* حركة نبض لطيفة لزر الواتساب العائم لجذب الانتباه */
-        @keyframes pulse-green {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(34, 197, 94, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
-        }
-        .whatsapp-float {
-            animation: pulse-green 2s infinite;
-        }
-    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "Aster Medical Center - مركز أستر الطبي المقطم",
+      "description": "مركز طبي متكامل وعيادات أسنان تخصصية في المقطم تعمل على مدار 24 ساعة.",
+      "image": "aster new logo.jpg",
+      "telePhone": "+201069937871",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "الهضبة الوسطى",
+        "addressLocality": "المقطم، القاهرة",
+        "addressCountry": "EG"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    }
+    </script>
 </head>
-<body class="bg-asterBg text-gray-800 font-sans antialiased scroll-smooth">
+<body class="bg-asterBg text-gray-800 font-sans">
 
-    <!-- شريط التنقل (الرأس) -->
-    <nav class="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <span class="font-black text-asterMain text-xl tracking-tight">Aster <span class="text-asterDark">Medical Center</span></span>
-            </div>
-            <div class="hidden md:flex space-x-reverse space-x-6 font-bold text-gray-600">
+    <header class="bg-white shadow-sm sticky top-0 z-50 border-b-2 border-asterMain">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#hero" class="flex items-center">
+                <img src="aster new logo.jpg" alt="Aster Medical Center Logo" class="h-14 w-auto object-contain">
+            </a>
+            
+            <div class="hidden md:flex space-x-reverse space-x-6 font-bold text-gray-700">
                 <a href="#hero" class="hover:text-asterMain transition">الرئيسية</a>
                 <a href="#services" class="hover:text-asterMain transition">خدماتنا</a>
-                <a href="blog.html" class="hover:text-asterMain transition text-purple-600 flex items-center gap-1">المقالات <span class="bg-red-500 w-2 h-2 rounded-full inline-block animate-ping"></span></a>
                 <a href="#about" class="hover:text-asterMain transition">عن المركز</a>
                 <a href="#contact" class="hover:text-asterMain transition">اتصل بنا</a>
             </div>
-            <a href="#contact" class="bg-asterMain text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-asterDark transition shadow-md">
-                احجز موعدك الآن
+            <a href="tel:+201069937871" class="bg-asterMain text-white px-5 py-2 rounded-full font-semibold hover:bg-asterDark transition flex items-center gap-2 shadow-md">
+                <i class="fas fa-phone-alt"></i> اتصل الآن
             </a>
-        </div>
-    </nav>
-
-    <!-- قسم الواجهة الرئيسية (Hero Section) -->
-    <header id="hero" class="py-20 md:py-28 bg-gradient-to-b from-white to-transparent px-6 text-center">
-        <div class="container mx-auto max-w-4xl space-y-6">
-            <span class="bg-purple-100 text-asterMain text-xs font-bold px-4 py-1.5 rounded-full">أهلاً بكم في مركز أستر الطبي بالقاهرة</span>
-            <h1 class="text-3xl md:text-5xl font-black text-asterDark leading-tight">
-                رعاية طبية متكاملة لابتسامة <br><span class="text-asterMain">تنبض بالصحة والجمال</span>
-            </h1>
-            <p class="text-gray-500 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
-                نجمع لك في مركز أستر نخبة من أفضل أطباء الأسنان، مع أحدث الأجهزة والتقنيات الرقمية لضمان علاج آمن، مريح، ونتائج تدوم طويلاً بدون ألم.
-            </p>
-            <div class="flex flex-wrap justify-center gap-4 pt-4">
-                <a href="#contact" class="bg-asterMain text-white px-8 py-3.5 rounded-full font-bold shadow-lg hover:bg-asterDark transition">
-                    ابدأ حجز موعد
-                </a>
-                <a href="blog.html" class="bg-white text-asterDark border border-gray-200 px-8 py-3.5 rounded-full font-bold shadow-sm hover:bg-gray-50 transition">
-                    تصفح النصائح الطبية
-                </a>
-            </div>
-        </div>
+        </nav>
     </header>
 
-    <!-- قسم الخدمات (Services Section) -->
-    <section id="services" class="py-20 container mx-auto px-6 max-w-6xl">
-        <div class="text-center max-w-xl mx-auto mb-16 space-y-3">
-            <h2 class="text-2xl md:text-3xl font-black text-asterDark">عيادات تخصصية متكاملة</h2>
-            <p class="text-gray-500 text-sm">نقدم مجموعة شاملة من خدمات طب الفم والأسنان بأعلى معايير الجودة والتعقيم الطبي.</p>
+    <section id="hero" class="bg-gradient-to-r from-asterBg to-purple-50 py-20 px-6">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 space-y-6 text-center md:text-right">
+                <span class="bg-purple-100 text-asterMain text-sm font-bold px-4 py-1.5 rounded-full inline-flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-asterMain animate-pulse"></span>
+                    طوارئ ورعاية طبية 24 ساعة طوال الأسبوع
+                </span>
+                <h1 class="text-4xl md:text-5xl font-black text-asterDark leading-tight">
+                    رعاية صحية متكاملة في <br><span class="text-asterMain">مركز أستر الطبي المقطم</span>
+                </h1>
+                <p class="text-lg text-gray-600 max-w-xl">
+                   بخبرة منذ عام 2018 وحتى الان يسعى Aster Medical Center ان يقدم خدمة طبية متميزة لعملائه مدعوما بخبرات نخبة من الاخصائيين والاستشاريين ومواكبا للتقنيات الحديثة في مجال تشخيص وعلاج امراض الفم والاسنان .
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="tel:+201069937871" class="bg-asterMain text-white text-center px-8 py-3 rounded-lg font-bold hover:bg-asterDark transition shadow-lg">
+                        <i class="fas fa-phone-alt ml-2"></i> الحجز الفوري والدعم
+                    </a>
+                    <a href="https://wa.me/201069937871" target="_blank" class="bg-[#25D366] text-white text-center px-8 py-3 rounded-lg font-bold hover:bg-[#20ba56] transition shadow-lg">
+                        <i class="fab fa-whatsapp ml-2"></i> استشارة واتساب سريعة
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center">
+                <img src="https://i.postimg.cc/0jWTGLsn/4da8b86a-7d11-411e-9db3-9821871b53ce.jpg" alt="Aster Medical Center" class="rounded-2xl shadow-2xl object-cover w-full max-w-md border-4 border-white">
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 container mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-3xl font-black text-asterDark">خدماتنا الطبية والتخصصية</h2>
+            <p class="text-gray-500 mt-2">اضغط على أي خدمة لمعرفة المزيد من التفاصيل وصور الحالات قبل وبعد</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- خدمة 1 -->
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-asterMain mb-6 text-xl">
+            
+            <a href="service-checking.html" class="block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-asterMain hover:shadow-xl transition text-center group">
+                <div class="w-14 h-14 bg-purple-50 text-asterMain group-hover:bg-asterMain group-hover:text-white rounded-xl flex items-center justify-center text-2xl mx-auto mb-5 transition shadow-sm">
+                    <i class="fas fa-notes-medical"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-asterDark group-hover:text-asterMain transition">الكشف</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">يتم الكشف على صحة الفم والاسنان باستخدام احدث الوسائل التقنية للوصول الى التشخيص الصحيح وخطة علاجية ممتازة.</p>
+                <span class="text-xs font-bold text-asterMain inline-flex items-center gap-1 group-hover:underline">المزيد <i class="fas fa-arrow-left text-[10px] transform group-hover:-translate-x-1 transition"></i></span>
+            </a>
+
+            <a href="service-cleaning.html" class="block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-asterMain hover:shadow-xl transition text-center group">
+                <div class="w-14 h-14 bg-purple-50 text-asterMain group-hover:bg-asterMain group-hover:text-white rounded-xl flex items-center justify-center text-2xl mx-auto mb-5 transition shadow-sm">
+                    <i class="fas fa-sparkles"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-asterDark group-hover:text-asterMain transition">تنظيف الجير وتلميع الاسنان</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">ازالة الترسبات الجيرية باستخدام الموجات فوق الصوتية وتلميع الاسنان للحصول على ابتسامة اكثر جاذبية.</p>
+                <span class="text-xs font-bold text-asterMain inline-flex items-center gap-1 group-hover:underline">المزيد <i class="fas fa-arrow-left text-[10px] transform group-hover:-translate-x-1 transition"></i></span>
+            </a>
+
+            <a href="service-whitening.html" class="block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-asterMain hover:shadow-xl transition text-center group">
+                <div class="w-14 h-14 bg-purple-50 text-asterMain group-hover:bg-asterMain group-hover:text-white rounded-xl flex items-center justify-center text-2xl mx-auto mb-5 transition shadow-sm">
+                    <i class="fas fa-wand-magic-sparkles"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-asterDark group-hover:text-asterMain transition">تبييض الاسنان</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">اذا كنت تعاني من اصفرار الاسنان فان مركز استر الطبي يقدم لك خدمات تبييض الاسنان للحصول على ابتسامة اكثر اشراقا.</p>
+                <span class="text-xs font-bold text-asterMain inline-flex items-center gap-1 group-hover:underline">المزيد <i class="fas fa-arrow-left text-[10px] transform group-hover:-translate-x-1 transition"></i></span>
+            </a>
+
+            <a href="service-fillings.html" class="block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-asterMain hover:shadow-xl transition text-center group">
+                <div class="w-14 h-14 bg-purple-50 text-asterMain group-hover:bg-asterMain group-hover:text-white rounded-xl flex items-center justify-center text-2xl mx-auto mb-5 transition shadow-sm">
                     <i class="fas fa-tooth"></i>
                 </div>
-                <h3 class="font-bold text-lg text-asterDark mb-2">تجميل وتركيبات الأسنان</h3>
-                <p class="text-gray-500 text-sm leading-relaxed">فينير، لومينير، والتركيبات الزيركونية والبورسلين بأعلى درجات المحاكاة للأسنان الطبيعية وبأحدث أجهزة التصميم الرقمي.</p>
-            </div>
-            <!-- خدمة 2 -->
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-asterMain mb-6 text-xl">
-                    <i class="fas fa-cubes"></i>
+                <h3 class="text-xl font-bold mb-2 text-asterDark group-hover:text-asterMain transition">حشوات الاسنان</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">في مركز استر يتم استخدام احدث المواد بايدي اخصائيين واستشاريين ذوي خبرة للوصول لافضل نتيجة.</p>
+                <span class="text-xs font-bold text-asterMain inline-flex items-center gap-1 group-hover:underline">المزيد <i class="fas fa-arrow-left text-[10px] transform group-hover:-translate-x-1 transition"></i></span>
+            </a>
+
+            <a href="service-nerve.html" class="block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-asterMain hover:shadow-xl transition text-center group">
+                <div class="w-14 h-14 bg-purple-50 text-asterMain group-hover:bg-asterMain group-hover:text-white rounded-xl flex items-center justify-center text-2xl mx-auto mb-5 transition shadow-sm">
+                    <i class="fas fa-bolt"></i>
                 </div>
-                <h3 class="font-bold text-lg text-asterDark mb-2">زراعة الأسنان الفورية</h3>
-                <p class="text-gray-500 text-sm leading-relaxed">تعويض الأسنان المفقودة بأحدث الأنظمة السويسرية والألمانية في أسرع وقت وبنسب نجاح عالمية على يد استشاريين متمرسين.</p>
-            </div>
-            <!-- خدمة 3 -->
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-asterMain mb-6 text-xl">
+                <h3 class="text-xl font-bold mb-2 text-asterDark group-hover:text-asterMain transition">حشو العصب</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">تنظيف وتطهير قنوات العصب من البكتيريا باستخدام احدث تكنولوجيا في جلسة واحدة بدون الم.</p>
+                <span class="text-xs font-bold text-asterMain inline-flex items-center gap-1 group-hover:underline">المزيد <i class="fas fa-arrow-left text-[10px] transform group-hover:-translate-x-1 transition"></i></span>
+            </a>
+
+            <a href="service-kids.html" class="block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-asterMain hover:shadow-xl transition text-center group">
+                <div class="w-14 h-14 bg-purple-50 text-asterMain group-hover:bg-asterMain group-hover:text-white rounded-xl flex items-center justify-center text-2xl mx-auto mb-5 transition shadow-sm">
                     <i class="fas fa-child"></i>
                 </div>
-                <h3 class="font-bold text-lg text-asterDark mb-2">طب أسنان الأطفال</h3>
-                <p class="text-gray-500 text-sm leading-relaxed">بيئة مخصصة ومحببة للأطفال لعلاج وحماية أسنانهم اللبنية والدائمة، وتطبيق الفلورايد الوقائي وحشوات الوقاية بدون خوف.</p>
-            </div>
-        </div>
-    </section>
+                <h3 class="text-xl font-bold mb-2 text-asterDark group-hover:text-asterMain transition">طب اسنان الاطفال</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">رعاية متكاملة لاسنان طفلك.</p>
+                <span class="text-xs font-bold text-asterMain inline-flex items-center gap-1 group-hover:underline">المزيد <i class="fas fa-arrow-left text-[10px] transform group-hover:-translate-x-1 transition"></i></span>
+            </a>
 
-    <!-- قسم من نحن (About Section) -->
-    <section id="about" class="py-20 bg-white border-y border-gray-100">
-        <div class="container mx-auto px-6 max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6">
-                <span class="text-asterMain font-bold text-xs uppercase tracking-wider bg-purple-50 px-3 py-1 rounded-md">لماذا مركز أستر الطبي؟</span>
-                <h2 class="text-2xl md:text-3xl font-black text-asterDark leading-tight">نعيد صياغة تجربة زيارتك لطبيب الأسنان لتكون مريحة وآمنة تماماً</h2>
-                <p class="text-gray-500 text-sm md:text-base leading-relaxed">
-                    نهتم في مركز أستر بأدق التفاصيل، بدءاً من أساليب التعقيم المطبقة بصرامة شديدة، وحتى توفير غرف معالجة مجهزة بسبل الراحة وأحدث شاشات العرض الرقمية لتقليل التوتر وفهم حالتك خطوة بخطوة مع طبيبك.
-                </p>
-                <div class="grid grid-cols-2 gap-4 pt-2">
-                    <div class="flex items-center gap-2 text-sm font-bold text-asterDark">
-                        <i class="fas fa-circle-check text-green-500"></i> أطباء استشاريون وأخصائيون
-                    </div>
-                    <div class="flex items-center gap-2 text-sm font-bold text-asterDark">
-                        <i class="fas fa-circle-check text-green-500"></i> رقابة تعقيم صارمة جداً
-                    </div>
+            <a href="service-implants.html" class="block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-asterMain hover:shadow-xl transition text-center group">
+                <div class="w-14 h-14 bg-purple-50 text-asterMain group-hover:bg-asterMain group-hover:text-white rounded-xl flex items-center justify-center text-2xl mx-auto mb-5 transition shadow-sm">
+                    <i class="fas fa-grip-lines-vertical"></i>
                 </div>
-            </div>
-            <div class="bg-asterBg h-64 md:h-80 rounded-2xl border border-gray-100 flex items-center justify-center text-gray-400">
-                <i class="fas fa-clinic-medical text-5xl text-purple-200"></i>
-            </div>
-        </div>
-    </section>
+                <h3 class="text-xl font-bold mb-2 text-asterDark group-hover:text-asterMain transition">زراعة الاسنان</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">يوفر مركز استر الطبي العديد من خيارات زراعة الاسنان مثل الزراعة الفورية على ايدي اخصائيين واستشاريين.</p>
+                <span class="text-xs font-bold text-asterMain inline-flex items-center gap-1 group-hover:underline">المزيد <i class="fas fa-arrow-left text-[10px] transform group-hover:-translate-x-1 transition"></i></span>
+            </a>
 
-    <!-- قسم الحجز والاتصال (Contact Section) -->
-    <section id="contact" class="py-20 container mx-auto px-6 max-w-3xl text-center space-y-8">
-        <div class="space-y-3">
-            <h2 class="text-2xl md:text-3xl font-black text-asterDark">حجز موعد للكشف والاستشارة</h2>
-            <p class="text-gray-500 text-sm">املأ النموذج السريع لتأكيد حجزك في العيادة، وسيتواصل معك منسق المواعيد فوراً.</p>
-        </div>
-        
-        <div class="bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-gray-100">
-            <p class="text-sm text-gray-600 mb-6 font-semibold">اضغط على الزر أدناه للانتقال لصفحة تسجيل البيانات وحجز دورك:</p>
-            <a href="https://docs.google.com/forms/d/1FBil8KpC3Cq6LrKHDOTCAl7yeL6OkUoJ6eoFf43vxs8/edit" target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-purple-700 to-asterMain text-white font-bold px-12 py-4 rounded-full text-lg shadow-lg hover:from-purple-800 hover:to-asterDark transition transform hover:-translate-y-0.5 duration-200">
-                <i class="fas fa-calendar-check"></i>
-                الدخول لنموذج الحجز الإلكتروني المباشر
+            <a href="service-orthodontics.html" class="block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-asterMain hover:shadow-xl transition text-center group">
+                <div class="w-14 h-14 bg-purple-50 text-asterMain group-hover:bg-asterMain group-hover:text-white rounded-xl flex items-center justify-center text-2xl mx-auto mb-5 transition shadow-sm">
+                    <i class="fas fa-teeth-open"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-asterDark group-hover:text-asterMain transition">تقويم الاسنان</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">تقويم الأسنان المعدني والشفاف الخفي للأطفال والبالغين لتعديل وتنسيق مظهر الابتسامة.</p>
+                <span class="text-xs font-bold text-asterMain inline-flex items-center gap-1 group-hover:underline">المزيد <i class="fas fa-arrow-left text-[10px] transform group-hover:-translate-x-1 transition"></i></span>
+            </a>
+
+            <a href="service-hollywood.html" class="block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-asterMain hover:shadow-xl transition text-center group">
+                <div class="w-14 h-14 bg-purple-50 text-asterMain group-hover:bg-asterMain group-hover:text-white rounded-xl flex items-center justify-center text-2xl mx-auto mb-5 transition shadow-sm">
+                    <i class="fas fa-star text-amber-400"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-asterDark group-hover:text-asterMain transition">ابتسامة هوليود وتجميل الاسنان</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">عدسات الاسنان والفينيرز واللومينيرز لابتسامة جديدة مخصصة لك انت فقط.</p>
+                <span class="text-xs font-bold text-asterMain inline-flex items-center gap-1 group-hover:underline">المزيد <i class="fas fa-arrow-left text-[10px] transform group-hover:-translate-x-1 transition"></i></span>
+            </a>
+
+            <a href="service-prosthodontics.html" class="block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-asterMain hover:shadow-xl transition text-center group md:col-span-2 lg:col-span-3 lg:max-w-md lg:mx-auto w-full">
+                <div class="w-14 h-14 bg-purple-50 text-asterMain group-hover:bg-asterMain group-hover:text-white rounded-xl flex items-center justify-center text-2xl mx-auto mb-5 transition shadow-sm">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-asterDark group-hover:text-asterMain transition">تركيبات الاسنان</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">التركيبات الثابتة والمتحركة لتعويض الاسنان المفقودة او حماية الاسنان الضعيفة.</p>
+                <span class="text-xs font-bold text-asterMain inline-flex items-center gap-1 group-hover:underline">المزيد <i class="fas fa-arrow-left text-[10px] transform group-hover:-translate-x-1 transition"></i></span>
             </a>
         </div>
     </section>
 
-    <!-- تذييل الصفحة الرسمي -->
-    <footer class="bg-asterDark text-purple-200/60 py-8 text-center text-xs border-t border-purple-950/30">
-        <p class="mb-2 text-purple-200/80 font-bold">مركز أستر الطبي - Aster Medical Center</p>
-        <p>© 2026 جميع الحقوق محفوظة لعيادات ومراكز أستر بالقاهرة.</p>
-    </footer>
+    <section id="about" class="bg-white py-20 px-6 border-t border-b border-gray-100">
+        <div class="container mx-auto flex flex-col md:flex-row-reverse items-center gap-12">
+            <div class="md:w-1/2 space-y-6">
+                <h2 class="text-3xl font-bold text-asterDark">لماذا يعتمد مرضى المقطم على مركز أستر؟</h2>
+                <p class="text-gray-600 leading-relaxed">
+                     نحن نجمع بين جودة الخدمة الطبية والالتزام التام بسلامة المرضى. نوفر بيئة معقمة بالكامل لمنع انتقال العدوى، ونحرص على اختيار طاقم طبي على أعلى مستوى لتقديم خدمات علاجية وتجميلية سريعة ومضمونة النتائج.
+                </p>
+                <div class="grid grid-cols-2 gap-4 pt-4">
+                    <div class="flex items-center gap-2 font-semibold text-gray-700">
+                        <i class="fas fa-shield-halved text-asterMain"></i> تعقيم رقمي صارم
+                    </div>
+                    <div class="flex items-center gap-2 font-semibold text-gray-700">
+                        <i class="fas fa-user-md text-asterMain"></i> أطباء استشاريون
+                    </div>
+                    <div class="flex items-center gap-2 font-semibold text-gray-700">
+                        <i class="fas fa-hand-holding-medical text-asterMain"></i> أسعار تنافسية مرنة
+                    </div>
+                    <div class="flex items-center gap-2 font-semibold text-gray-700">
+                        <i class="fas fa-business-time text-asterMain"></i> متاحون طوال 24 ساعة
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=600" alt="Our Clinic" class="rounded-2xl shadow-xl border-b-8 border-asterMain">
+            </div>
+        </div>
+    </section>
 
-    <!-- ==================== زر الواتساب العائم الجديد ==================== -->
-    <a href="https://wa.me/201069937871?text=مرحباً%20مركز%20أستر%20الطبي،%20أود%20الاستفسار%20عن%20مواعيد%20العيادة%20والحجز" 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       class="whatsapp-float fixed bottom-6 left-6 z-50 bg-green-500 text-white rounded-full p-4 shadow-2xl flex items-center justify-center hover:bg-green-600 transition duration-300 group"
-       title="تواصل معنا عبر واتساب">
-        <!-- أيقونة الواتساب من مكتبة FontAwesome -->
-        <i class="fab fa-whatsapp text-3xl md:text-4xl"></i>
-        <!-- نص توضيحي ترحيبي يظهر بجانب الأيقونة عند تمرير الماوس بالكمبيوتر -->
-        <span class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:mr-2 transition-all duration-300 ease-out whitespace-nowrap text-sm font-bold">
-            دردش معنا الآن
-        </span>
-    </a>
-    <!-- ================================================================== -->
+    <section id="contact" class="py-20 container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <h2 class="text-3xl font-bold text-asterDark">مستعدون لاستقبالكم على مدار الساعة</h2>
+                <p class="text-gray-600">يمكنكم زيارتنا مباشرة في الهضبة الوسطى أو الضغط على الزر أدناه لفتح موقع العيادة مباشرة على هاتفك والوصول إلينا بسهولة عبر الـ GPS.</p>
+                
+                <div class="space-y-4 pb-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-purple-50 text-asterMain rounded-full flex items-center justify-center text-xl"><i class="fas fa-map-marker-alt"></i></div>
+                        <div><h4 class="font-bold text-asterDark">العنوان ورقم الفرع</h4><p class="text-gray-500">76 شارع الادهم - الحي الثامن - خلف معمار المرشدي الهضبة الوسطى المقطم </p></div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-purple-50 text-asterMain rounded-full flex items-center justify-center text-xl"><i class="fas fa-phone"></i></div>
+                        <div><h4 class="font-bold text-asterDark">رقم الهاتف والحجوزات</h4><p class="text-gray-500">01069937871 (20+)</p></div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-purple-50 text-asterMain rounded-full flex items-center justify-center text-xl"><i class="fas fa-clock"></i></div>
+                        <div><h4 class="font-bold text-asterDark">ساعات العمل الرسمية</h4><p class="text-gray-500">مفتوح 24 ساعة / 7 أيام في الأسبوع</p></div>
+                    </div>
+                </div>
+
+                <a href="https://share.google/51yQiVjd7eKkyKKmj" target="_blank" class="inline-flex items-center gap-3 bg-asterMain text-white px-8 py-4 rounded-xl font-bold hover:bg-asterDark transition shadow-lg w-full sm:w-auto justify-center">
+                    <i class="fas fa-map-location-dot text-xl"></i>
+                    افتح الموقع في خرائط جوجل (GPS)
+                </a>
+            </div>
+            
+            <div class="w-full h-80 rounded-2xl overflow-hidden shadow-lg border-2 border-purple-100 bg-purple-50 flex flex-col items-center justify-center p-8 text-center space-y-4">
+                <div class="w-20 h-20 bg-white text-asterMain rounded-full flex items-center justify-center text-4xl shadow-md animate-bounce">
+                    <i class="fas fa-location-dot"></i>
+                </div>
+                <h3 class="text-xl font-bold text-asterDark">موقعنا دقيق وجاهز للملاحة</h3>
+                <p class="text-gray-500 text-sm max-w-xs">اضغط على زر الخرائط الجانبي لتشغيل الاتجاهات فوراً والوصول لباب العيادة.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-asterDark text-purple-200 py-8 px-6 text-center text-sm border-t-4 border-asterMain flex flex-col items-center gap-3">
+        <img src="aster new logo.jpg" alt="Aster Medical Center Mini Logo" class="h-10 w-auto object-contain brightness-0 invert opacity-80">
+        <p class="mt-2 text-purple-300">© 2026 جميع الحقوق محفوظة لمركز أستر الطبي بالقاهرة.</p>
+    </footer>
 
 </body>
 </html>
