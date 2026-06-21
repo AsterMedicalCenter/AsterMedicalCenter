@@ -50,21 +50,34 @@
 
     <header class="bg-white shadow-sm sticky top-0 z-50 border-b-2 border-asterMain">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <button id="menu-btn" class="block md:hidden text-gray-700 hover:text-asterMain focus:outline-none order-first text-2xl p-1">
+                <i class="fas fa-bars"></i>
+            </button>
+
             <a href="#hero" class="flex items-center">
                 <img src="aster new logo.jpg" alt="Aster Medical Center Logo" class="h-14 w-auto object-contain">
             </a>
             
-           <div class="hidden md:flex space-x-reverse space-x-6 font-bold text-gray-700">
-    <a href="#hero" class="hover:text-asterMain transition">الرئيسية</a>
-    <a href="#services" class="hover:text-asterMain transition">خدماتنا</a>
-    <a href="blog.html" class="hover:text-asterMain transition">المقالات</a>
-    <a href="#about" class="hover:text-asterMain transition">عن المركز</a>
-    <a href="#contact" class="hover:text-asterMain transition">اتصل بنا</a>
-</div>
-            <a href="tel:+201069937871" class="bg-asterMain text-white px-5 py-2 rounded-full font-semibold hover:bg-asterDark transition flex items-center gap-2 shadow-md">
+            <div class="hidden md:flex space-x-reverse space-x-6 font-bold text-gray-700">
+                <a href="#hero" class="hover:text-asterMain transition">الرئيسية</a>
+                <a href="#services" class="hover:text-asterMain transition">خدماتنا</a>
+                <a href="blog.html" class="hover:text-asterMain transition">المقالات</a>
+                <a href="#about" class="hover:text-asterMain transition">عن المركز</a>
+                <a href="#contact" class="hover:text-asterMain transition">اتصل بنا</a>
+            </div>
+
+            <a href="tel:+201069937871" class="bg-asterMain text-white px-4 md:px-5 py-2 rounded-full font-semibold hover:bg-asterDark transition flex items-center gap-2 shadow-md text-sm md:text-base">
                 <i class="fas fa-phone-alt"></i> اتصل الآن
             </a>
         </nav>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-inner px-6 py-4 flex flex-col space-y-3 font-bold text-gray-700">
+            <a href="#hero" class="hover:text-asterMain py-1 transition mobile-link">الرئيسية</a>
+            <a href="#services" class="hover:text-asterMain py-1 transition mobile-link">خدماتنا</a>
+            <a href="blog.html" class="hover:text-asterMain py-1 transition">المقالات</a>
+            <a href="#about" class="hover:text-asterMain py-1 transition mobile-link">عن المركز</a>
+            <a href="#contact" class="hover:text-asterMain py-1 transition mobile-link">اتصل بنا</a>
+        </div>
     </header>
 
     <section id="hero" class="bg-gradient-to-r from-asterBg to-purple-50 py-20 px-6">
@@ -260,13 +273,9 @@
         </div>
     </section>
 
-    <!-- زر واتساب العائم الجديد -->
     <a href="https://wa.me/201069937871" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-2xl hover:bg-[#20ba56] hover:scale-110 transition duration-300 group">
-        <!-- تأثير النبض الدائري خلف الزر لجذب الانتباه -->
         <span class="absolute inset-0 rounded-full bg-[#25D366] opacity-40 animate-ping pointer-events-none"></span>
-        <!-- أيقونة الواتساب -->
         <i class="fab fa-whatsapp text-3xl z-10"></i>
-        <!-- تلميح يظهر عند تمرير الماوس (اختياري وجميل) -->
         <span class="absolute right-20 bg-asterDark text-white text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300 whitespace-nowrap shadow-md pointer-events-none">
             تحدث معنا الآن
         </span>
@@ -276,6 +285,24 @@
         <img src="aster new logo.jpg" alt="Aster Medical Center Mini Logo" class="h-10 w-auto object-contain brightness-0 invert opacity-80">
         <p class="mt-2 text-purple-300">© 2026 جميع الحقوق محفوظة لمركز أستر الطبي بالقاهرة.</p>
     </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // عند الضغط على زر الهامبرغر يفتح أو يغلق القائمة
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // عند الضغط على أي رابط داخل الصفحة (الروابط التي تبدأ بـ #) يتم إغلاق القائمة تلقائياً بعد الانتقال
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
 
 </body>
 </html>
