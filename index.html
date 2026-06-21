@@ -46,7 +46,7 @@
     }
     </script>
 </head>
-<body class="bg-asterBg text-gray-800 font-sans">
+<body class="bg-asterBg text-gray-800 font-sans relative">
 
     <header class="bg-white shadow-sm sticky top-0 z-50 border-b-2 border-asterMain">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
@@ -259,6 +259,18 @@
             </div>
         </div>
     </section>
+
+    <!-- زر واتساب العائم الجديد -->
+    <a href="https://wa.me/201069937871" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-2xl hover:bg-[#20ba56] hover:scale-110 transition duration-300 group">
+        <!-- تأثير النبض الدائري خلف الزر لجذب الانتباه -->
+        <span class="absolute inset-0 rounded-full bg-[#25D366] opacity-40 animate-ping pointer-events-none"></span>
+        <!-- أيقونة الواتساب -->
+        <i class="fab fa-whatsapp text-3xl z-10"></i>
+        <!-- تلميح يظهر عند تمرير الماوس (اختياري وجميل) -->
+        <span class="absolute right-20 bg-asterDark text-white text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300 whitespace-nowrap shadow-md pointer-events-none">
+            تحدث معنا الآن
+        </span>
+    </a>
 
     <footer class="bg-asterDark text-purple-200 py-8 px-6 text-center text-sm border-t-4 border-asterMain flex flex-col items-center gap-3">
         <img src="aster new logo.jpg" alt="Aster Medical Center Mini Logo" class="h-10 w-auto object-contain brightness-0 invert opacity-80">
