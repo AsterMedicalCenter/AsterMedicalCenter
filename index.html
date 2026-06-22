@@ -91,8 +91,8 @@
     </header>
 
     <section id="hero" class="bg-gradient-to-r from-asterBg to-purple-50 py-20 px-6">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
-            <div class="md:w-1/2 space-y-6 text-center md:text-right">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div class="lg:w-1/2 space-y-6 text-center lg:text-right">
                 <span class="bg-purple-100 text-asterMain text-sm font-bold px-4 py-1.5 rounded-full inline-flex items-center gap-2">
                     <span class="w-2 h-2 rounded-full bg-asterMain animate-pulse"></span>
                     طوارئ ورعاية طبية 24 ساعة طوال الأسبوع
@@ -103,7 +103,7 @@
                 <p class="text-lg text-gray-600 max-w-xl">
                    بخبرة منذ عام 2018 وحتى الان يسعى Aster Medical Center ان يقدم خدمة طبية متميزة لعملائه مدعوما بخبرات نخبة من الاخصائيين والاستشاريين ومواكبا للتقنيات الحديثة في مجال تشخيص وعلاج امراض الفم والاسنان .
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <a href="tel:+201069937871" class="bg-asterMain text-white text-center px-8 py-3 rounded-lg font-bold hover:bg-asterDark transition shadow-lg">
                         <i class="fas fa-phone-alt ml-2"></i> الحجز الفوري والدعم
                     </a>
@@ -112,8 +112,12 @@
                     </a>
                 </div>
             </div>
-            <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center">
-                <img src="https://i.postimg.cc/0jWTGLsn/4da8b86a-7d11-411e-9db3-9821871b53ce.jpg" alt="Aster Medical Center" class="rounded-2xl shadow-2xl object-cover w-full max-w-md border-4 border-white">
+            
+            <!-- عرض الصور التتابعي العشوائي بحجم أكبر وانتقال ناعم -->
+            <div class="lg:w-1/2 flex justify-center w-full">
+                <div class="relative rounded-2xl shadow-2xl w-full max-w-xl h-[450px] md:h-[500px] overflow-hidden border-4 border-white bg-gray-100">
+                    <img id="hero-slider" src="https://i.postimg.cc/0jWTGLsn/4da8b86a-7d11-411e-9db3-9821871b53ce.jpg" alt="Aster Medical Center" class="w-full h-full object-cover transition-opacity duration-[900ms] opacity-100 ease-in-out">
+                </div>
             </div>
         </div>
     </section>
@@ -158,7 +162,7 @@
                     <i class="fas fa-tooth"></i>
                 </div>
                 <h3 class="text-xl font-bold mb-2 text-asterDark group-hover:text-asterMain transition">حشوات الاسنان</h3>
-                <p class="text-gray-500 text-sm leading-relaxed mb-4">في مركز استر يتم استخدام احدث المواد بايدي اخصائيين واستشاريين ذوي خبرة للوصول لافضل نتيجة.</p>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">في مركز استر يتم استفاده احدث المواد بايدي اخصائيين واستشاريين ذوي خبرة للوصول لافضل نتيجة.</p>
                 <span class="text-xs font-bold text-asterMain inline-flex items-center gap-1 group-hover:underline">المزيد <i class="fas fa-arrow-left text-[10px] transform group-hover:-translate-x-1 transition"></i></span>
             </a>
 
@@ -301,17 +305,55 @@
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        // عند الضغط على زر الهامبرغر يفتح أو يغلق القائمة
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // عند الضغط على أي رابط داخل الصفحة (الروابط التي تبدأ بـ #) يتم إغلاق القائمة تلقائياً بعد الانتقال
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        const images = [
+            "https://i.postimg.cc/0jWTGLsn/4da8b86a-7d11-411e-9db3-9821871b53ce.jpg", 
+            "https://i.postimg.cc/SNh01ttW/669844328-18547855063066649-4788045169520018170-n.jpg", 
+            "https://i.postimg.cc/kgJ0qRCJ/658850356-18546593698066649-3858262697918268967-n.jpg", 
+            "https://i.postimg.cc/mrhKFxh0/681290346-18552303835066649-5628683836116458908-n.jpg", 
+            "https://i.postimg.cc/mkWnqtj5/657370346-18545245837066649-4843874218497046378-n.jpg", 
+            "https://i.postimg.cc/2jnMW786/689803785-1457611983045813-2786116167039980010-n.jpg", 
+            "https://i.postimg.cc/W3gWMsVK/658942181-18543993088066649-4599793836901775028-n.jpg", 
+            "https://i.postimg.cc/tC2rdS0G/671110747-18550301365066649-5105019135970336509-n.jpg", 
+            "https://i.postimg.cc/j5HcDvQr/150421069-909554029803457-5490192969801051454-n.jpg", 
+            "https://i.postimg.cc/tCS5nsPV/704750977-18557988160066649-4880646896165797373-n.jpg", 
+            "https://i.postimg.cc/FHkjfDNp/temp-face-copy.jpg"
+        ];
+
+        let currentIndex = 0;
+        const sliderElement = document.getElementById('hero-slider');
+
+        // التغيير التلقائي مبرمج ليعمل بشكل عشوائي تماماً كل 5 ثواني (5000ms)
+        setInterval(() => {
+            // خطوة 1: تلاشي تدريجي (Fade out)
+            sliderElement.classList.remove('opacity-100');
+            sliderElement.classList.add('opacity-0');
+
+            // خطوة 2: اختيار عشوائي ذكي وتأثير الظهور (Fade in)
+            setTimeout(() => {
+                let nextIndex;
+                // حلقة للتأكد من عدم اختيار نفس الصورة الحالية مرتين متتاليتين
+                do {
+                    nextIndex = Math.floor(Math.random() * images.length);
+                } while (nextIndex === currentIndex);
+
+                currentIndex = nextIndex;
+                sliderElement.src = images[currentIndex];
+                
+                // إعادة الصورة للظهور بنعومة 900ms
+                sliderElement.classList.remove('opacity-0');
+                sliderElement.classList.add('opacity-100');
+            }, 600); 
+        }, 5000); 
     </script>
 
 </body>
