@@ -334,7 +334,72 @@
         </div>
     </section>
 
-    <a href="https://wa.me/201069937871" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-2xl hover:bg-[#20ba56] hover:scale-110 transition duration-300 group">
+    <div id="discount-modal-overlay" class="fixed inset-0 bg-asterDark bg-opacity-80 z-[100] hidden flex items-center justify-center backdrop-blur-sm transition-opacity duration-500 opacity-0 px-4">
+        
+        <div id="offer-step" class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full text-center relative transform scale-95 transition-transform duration-300 border-t-8 border-asterMain">
+            <button id="close-offer-btn" class="absolute top-4 left-4 text-gray-400 hover:text-red-500 text-xl transition"><i class="fas fa-times"></i></button>
+            <div class="w-20 h-20 bg-purple-50 text-asterMain rounded-full flex items-center justify-center text-4xl mx-auto mb-4 animate-bounce shadow-inner">
+                <i class="fas fa-gift"></i>
+            </div>
+            <h3 class="text-2xl font-black text-asterDark mb-3 leading-tight">عرض خاص وحصري!</h3>
+            <p class="text-gray-700 font-bold mb-6 text-lg leading-relaxed">سجل بياناتك هنا للحصول على خصم بقيمة <span class="text-asterMain text-2xl mx-1 bg-purple-100 px-2 py-1 rounded">50%</span><br>على تنظيف الجير وتلميع الأسنان</p>
+            <button id="show-form-btn" class="w-full bg-asterMain text-white py-3 rounded-xl font-bold text-lg hover:bg-asterDark transition shadow-lg flex items-center justify-center gap-2">
+                سجل الآن للحصول على الخصم <i class="fas fa-arrow-left"></i>
+            </button>
+        </div>
+
+        <div id="form-step" class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full relative hidden border-t-8 border-asterMain">
+            <button id="close-form-btn" class="absolute top-4 left-4 text-gray-400 hover:text-red-500 text-xl transition"><i class="fas fa-times"></i></button>
+            <h3 class="text-xl font-bold text-asterDark mb-6 text-center border-b pb-4">بيانات الحجز والخصم</h3>
+            <form id="discount-form" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-1">الاسم الكريم <span class="text-red-500">*</span></label>
+                    <input type="text" name="name" required class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-asterMain focus:border-transparent outline-none transition">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-1">رقم الهاتف (للتواصل) <span class="text-red-500">*</span></label>
+                    <input type="tel" name="phone" required dir="ltr" class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-asterMain focus:border-transparent outline-none transition text-right">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-1">السن <span class="text-red-500">*</span></label>
+                    <input type="number" name="age" required min="5" max="100" class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-asterMain focus:border-transparent outline-none transition">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-1">بماذا تهتم أكثر؟ <span class="text-red-500">*</span></label>
+                    <select name="interest" required class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-asterMain focus:border-transparent outline-none transition">
+                        <option value="" disabled selected>اختر اهتمامك...</option>
+                        <option value="تنظيف الجير والتلميع (عرض الخصم)">تنظيف الجير والتلميع (عرض الخصم)</option>
+                        <option value="تجميل وابتسامة هوليود">تجميل وابتسامة هوليود</option>
+                        <option value="زراعة الأسنان">زراعة الأسنان</option>
+                        <option value="تقويم الأسنان">تقويم الأسنان</option>
+                        <option value="علاج العصب والحشوات">علاج العصب والحشوات</option>
+                    </select>
+                </div>
+                <button type="submit" id="submit-btn" class="w-full bg-asterMain text-white py-3 rounded-xl font-bold text-lg hover:bg-asterDark transition shadow-lg mt-4 flex items-center justify-center gap-2">
+                    <span id="btn-text">تأكيد وإرسال البيانات</span>
+                    <i class="fas fa-spinner fa-spin hidden" id="loading-icon"></i>
+                </button>
+            </form>
+        </div>
+
+        <div id="success-step" class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full text-center relative hidden border-t-8 border-green-500">
+            <button id="close-success-btn" class="absolute top-4 left-4 text-gray-400 hover:text-red-500 text-xl transition"><i class="fas fa-times"></i></button>
+            <div class="w-20 h-20 bg-green-50 text-green-500 rounded-full flex items-center justify-center text-4xl mx-auto mb-4 shadow-inner">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3 class="text-2xl font-black text-asterDark mb-2">شكراً لتسجيل بياناتك!</h3>
+            <p class="text-gray-600 text-sm mb-6 leading-relaxed bg-gray-50 p-3 rounded-lg border border-gray-100">
+                سيتم الاتصال بسيادتكم قريباً.<br>يرجى تزويد مقدم الخدمة بالكود التالي عند الحضور لتستفيد من الخصم، علماً بأنه صالح لمرة واحدة فقط.
+            </p>
+            <div class="border-2 border-dashed border-asterMain bg-purple-50 rounded-xl p-4 mb-6">
+                <p class="text-sm text-gray-600 font-bold mb-1">كود الخصم السري الخاص بك:</p>
+                <p class="text-4xl font-black text-asterMain tracking-widest" id="discount-code-display">---</p>
+            </div>
+            <button onclick="closeDiscountModal()" class="w-full bg-gray-200 text-gray-800 py-3 rounded-xl font-bold hover:bg-gray-300 transition">إغلاق النافذة</button>
+        </div>
+
+    </div>
+    <a href="https://wa.me/201069937871" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-2xl hover:bg-[#20ba56] hover:scale-110 transition duration-300 group">
         <span class="absolute inset-0 rounded-full bg-[#25D366] opacity-40 animate-ping pointer-events-none"></span>
         <i class="fab fa-whatsapp text-3xl z-10"></i>
         <span class="absolute right-20 bg-asterDark text-white text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300 whitespace-nowrap shadow-md pointer-events-none">
@@ -348,6 +413,7 @@
     </footer>
 
     <script>
+        // سكربت القائمة الجانبية (الموبايل)
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -362,6 +428,7 @@
             });
         });
 
+        // سكربت تغيير الصور في القسم الرئيسي (Hero Slider)
         const images = [
             "https://i.postimg.cc/0jWTGLsn/4da8b86a-7d11-411e-9db3-9821871b53ce.jpg", 
             "https://i.postimg.cc/SNh01ttW/669844328-18547855063066649-4788045169520018170-n.jpg", 
@@ -396,7 +463,97 @@
                 sliderElement.classList.add('opacity-100');
             }, 600); 
         }, 5000); 
-    </script>
 
+        // ==========================================
+        // سكربت النافذة المنبثقة للخصم وإرسال البيانات
+        // ==========================================
+        const modalOverlay = document.getElementById('discount-modal-overlay');
+        const offerStep = document.getElementById('offer-step');
+        const formStep = document.getElementById('form-step');
+        const successStep = document.getElementById('success-step');
+        const discountForm = document.getElementById('discount-form');
+
+        function closeDiscountModal() {
+            modalOverlay.classList.remove('opacity-100');
+            modalOverlay.classList.add('opacity-0');
+            setTimeout(() => { modalOverlay.classList.add('hidden'); }, 500);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // إظهار النافذة للمستخدمين الجدد بعد 4 ثواني
+            if (!localStorage.getItem('asterDiscountClaimed')) {
+                setTimeout(() => {
+                    modalOverlay.classList.remove('hidden');
+                    setTimeout(() => {
+                        modalOverlay.classList.remove('opacity-0');
+                        modalOverlay.classList.add('opacity-100');
+                        offerStep.classList.remove('scale-95');
+                        offerStep.classList.add('scale-100');
+                    }, 50);
+                }, 4000); 
+            }
+
+            // إعداد أزرار الإغلاق
+            ['close-offer-btn', 'close-form-btn', 'close-success-btn'].forEach(id => {
+                document.getElementById(id)?.addEventListener('click', closeDiscountModal);
+            });
+
+            // زر الانتقال لنموذج التسجيل
+            document.getElementById('show-form-btn').addEventListener('click', () => {
+                offerStep.classList.add('hidden');
+                formStep.classList.remove('hidden');
+            });
+
+            // معالجة إرسال البيانات لجوجل شيت
+            discountForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const btnText = document.getElementById('btn-text');
+                const loadingIcon = document.getElementById('loading-icon');
+                const submitBtn = document.getElementById('submit-btn');
+                
+                // تفعيل حالة التحميل
+                submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-75');
+                btnText.innerText = "جاري التسجيل...";
+                loadingIcon.classList.remove('hidden');
+
+                const formData = new FormData(discountForm);
+                
+                // الرابط الخاص بك مدمج هنا
+                const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwOpLYtXuynsj5gyHd9fPDxFXf7jam7_rfrT2HSC6RwKZvbcyRS97JOckfUhLjdu9ApgQ/exec';
+
+                fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if(data.result === 'success') {
+                        formStep.classList.add('hidden');
+                        successStep.classList.remove('hidden');
+                        document.getElementById('discount-code-display').innerText = data.code;
+                        
+                        // منع ظهور النافذة مرة أخرى لنفس الزائر مستقبلاً
+                        localStorage.setItem('asterDiscountClaimed', 'true');
+                    } else {
+                        alert(data.message || 'عذراً، حدث خطأ. قد تكون الأكواد نفذت.');
+                        resetBtn();
+                    }
+                })
+                .catch(error => {
+                    alert('تم الإرسال بنجاح (أو قد يكون المتصفح منع الاستجابة، يرجى مراجعة الشيت).');
+                    resetBtn();
+                });
+
+                function resetBtn() {
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('opacity-75');
+                    btnText.innerText = "تأكيد وإرسال البيانات";
+                    loadingIcon.classList.add('hidden');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
