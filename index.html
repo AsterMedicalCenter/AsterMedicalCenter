@@ -82,41 +82,34 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <header class="bg-white shadow-sm sticky top-0 z-50 border-b-2 border-asterMain">
-        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+        <nav class="container mx-auto px-6 py-3 flex flex-wrap md:flex-nowrap justify-between items-center relative">
             
-            <div class="hidden md:block w-24"></div>
-
-            <div class="flex items-center justify-between w-full md:w-auto gap-4 md:gap-8">
-                
-                <button id="menu-btn" class="block md:hidden text-gray-700 hover:text-asterMain focus:outline-none order-first text-2xl p-1">
-                    <i class="fas fa-bars"></i>
-                </button>
-
-                <a href="#hero" class="flex items-center">
+            <div class="flex items-center justify-between w-full md:w-1/3 md:justify-start">
+                <a href="#hero" class="flex items-center shrink-0">
                     <img src="aster new logo.jpg" alt="Aster Medical Center Logo" class="h-14 w-auto object-contain">
                 </a>
                 
-                <div class="hidden md:flex space-x-reverse space-x-6 font-bold text-gray-700">
-                    <a href="#hero" class="hover:text-asterMain transition">الرئيسية</a>
-                    <a href="#services" class="hover:text-asterMain transition">خدماتنا</a>
-                    <a href="blog.html" class="hover:text-asterMain transition">المقالات</a>
-                    <a href="#about" class="hover:text-asterMain transition">عن المركز</a>
-                    <a href="#contact" class="hover:text-asterMain transition">اتصل بنا</a>
-                </div>
-
-                <a href="tel:+201069937871" class="bg-asterMain text-white px-4 md:px-5 py-2 rounded-full font-semibold hover:bg-asterDark transition flex items-center gap-2 shadow-md text-sm md:text-base">
-                    <i class="fas fa-phone-alt"></i> اتصل الآن
-                </a>
+                <button id="menu-btn" class="block md:hidden text-gray-700 hover:text-asterMain focus:outline-none text-2xl p-1">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-
-            <div class="hidden md:flex w-24 justify-end items-center">
+    
+            <div class="hidden md:flex w-1/3 justify-center items-center space-x-reverse space-x-6 font-bold text-gray-700">
+                <a href="#hero" class="hover:text-asterMain transition">الرئيسية</a>
+                <a href="#services" class="hover:text-asterMain transition">خدماتنا</a>
+                <a href="blog.html" class="hover:text-asterMain transition">المقالات</a>
+                <a href="#about" class="hover:text-asterMain transition">عن المركز</a>
+                <a href="#contact" class="hover:text-asterMain transition">اتصل بنا</a>
+            </div>
+    
+            <div class="hidden md:flex w-1/3 justify-end items-center">
                 <a href="index-en.html" class="flex items-center gap-1 font-bold text-gray-700 hover:text-asterMain transition" dir="ltr">
                     <i class="fas fa-globe"></i> English
                 </a>
             </div>
             
         </nav>
-
+    
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-inner px-6 py-4 flex flex-col space-y-3 font-bold text-gray-700">
             <a href="#hero" class="hover:text-asterMain py-1 transition mobile-link">الرئيسية</a>
             <a href="#services" class="hover:text-asterMain py-1 transition mobile-link">خدماتنا</a>
@@ -497,7 +490,6 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            // إظهار النافذة للمستخدمين الجدد بعد 4 ثواني
             if (!localStorage.getItem('asterDiscountClaimed')) {
                 setTimeout(() => {
                     modalOverlay.classList.remove('hidden');
@@ -510,18 +502,15 @@
                 }, 4000); 
             }
 
-            // إعداد أزرار الإغلاق
             ['close-offer-btn', 'close-form-btn', 'close-success-btn'].forEach(id => {
                 document.getElementById(id)?.addEventListener('click', closeDiscountModal);
             });
 
-            // زر الانتقال لنموذج التسجيل
             document.getElementById('show-form-btn').addEventListener('click', () => {
                 offerStep.classList.add('hidden');
                 formStep.classList.remove('hidden');
             });
 
-            // معالجة إرسال البيانات لجوجل شيت
             discountForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
@@ -529,7 +518,6 @@
                 const loadingIcon = document.getElementById('loading-icon');
                 const submitBtn = document.getElementById('submit-btn');
                 
-                // تفعيل حالة التحميل
                 submitBtn.disabled = true;
                 submitBtn.classList.add('opacity-75');
                 btnText.innerText = "جاري التسجيل...";
@@ -537,7 +525,6 @@
 
                 const formData = new FormData(discountForm);
                 
-                // الرابط الخاص بك مدمج هنا
                 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwOpLYtXuynsj5gyHd9fPDxFXf7jam7_rfrT2HSC6RwKZvbcyRS97JOckfUhLjdu9ApgQ/exec';
 
                 fetch(GOOGLE_SCRIPT_URL, {
@@ -551,7 +538,6 @@
                         successStep.classList.remove('hidden');
                         document.getElementById('discount-code-display').innerText = data.code;
                         
-                        // منع ظهور النافذة مرة أخرى لنفس الزائر مستقبلاً
                         localStorage.setItem('asterDiscountClaimed', 'true');
                     } else {
                         alert(data.message || 'عذراً، حدث خطأ. قد تكون الأكواد نفذت.');
